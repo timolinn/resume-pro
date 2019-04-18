@@ -18,13 +18,13 @@ export default class EmployeeController {
         if (!employee) {
             return next(new AppError('Employee not found', 404, true));
         }
-        return res.json(employee);
+        return res.json({ status: 'success', data : employee});
     }
 
     async create(req, res, next) {
         const employeeGen = new EmployeeGenerator();
         const employee = new Employee(employeeGen.generate());
         await employee.save();
-        res.json(employee);
+        res.json({ status: 'success', data: employee });
     }
 }

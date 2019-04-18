@@ -1,5 +1,4 @@
 import Department from './departmentModel';
-import AppError from '../../handlers/AppError';
 import DepartmentGenerator from '../generators/DepartmentGenerator';
 import mongoose from 'mongoose';
 

@@ -8,7 +8,10 @@ import config from './config';
 import AppError from './handlers/AppError';
 
 // routers
-import authRouter from './routes/auth';
+import employeeRouter from './routes/employee';
+import titleRouter from './routes/title';
+import departmentRouter from './routes/department';
+import jobHistoryRouter from './routes/jobHistory';
 
 const app = express();
 
@@ -29,7 +32,10 @@ app.use(expressValidator());
 
 //routes
 app.get('/', (req, res) => res.send('Node Starter files!'));
-app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/employee', employeeRouter);
+app.use('/api/v1/titles', titleRouter);
+app.use('/api/v1/departments', departmentRouter);
+app.use('/api/v1/job-history', jobHistoryRouter);
 
 // Handle favicon requests from browsers
 app.get('/favicon.ico', (req, res) => res.sendStatus(204));
